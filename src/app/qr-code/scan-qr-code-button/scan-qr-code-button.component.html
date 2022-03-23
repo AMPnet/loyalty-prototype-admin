@@ -11,5 +11,7 @@
 </ng-container>
 
 <ng-container *ngIf="state === 'CODE_SCANNED'">
-  Code scanned! Content: {{ content }}
+  <p>Wallet address: {{ tokenBalanceResponse?.wallet_address }}</p>
+  <p>Token balance: {{ tokenBalanceResponse?.token_balance }}</p>
+  <p>Token address: {{ tokenBalanceResponse?.token_address }}</p>
 </ng-container>
