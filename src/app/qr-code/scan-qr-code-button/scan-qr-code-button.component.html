@@ -1,0 +1,15 @@
+<ng-container *ngIf="state === 'WAITING'">
+  <button class="bg-blue-400 text-white text-2xl py-1 px-6 border-2 border-blue-700 rounded-full
+                 hover:bg-blue-700 flex flex-row items-center gap-2"
+          (click)="scanQrCode()">
+    Scan QR Code
+  </button>
+</ng-container>
+
+<ng-container *ngIf="state === 'SCANNING'">
+  <zxing-scanner class="border-2" (scanSuccess)="handleScannedCode($event)"></zxing-scanner>
+</ng-container>
+
+<ng-container *ngIf="state === 'CODE_SCANNED'">
+  Code scanned! Content: {{ content }}
+</ng-container>
