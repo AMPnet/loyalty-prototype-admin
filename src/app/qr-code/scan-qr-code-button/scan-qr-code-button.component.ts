@@ -28,7 +28,7 @@ export class ScanQrCodeButtonComponent {
     const contractAddress = "0xe6b8a5cf854791412c1f6efc7caf629f5df1c747"
 
     this.httpClient.get<FetchErc20TokenBalanceResponse>(
-      `http://localhost:8080/info/${chainId}/${messageId}/erc20-balance/${contractAddress}`,
+      `https://eth-staging.ampnet.io/api/blockchain-api/info/${chainId}/${messageId}/erc20-balance/${contractAddress}`,
       {responseType: 'json'}
     ).subscribe((value) => {
       this.tokenBalanceResponse = value
